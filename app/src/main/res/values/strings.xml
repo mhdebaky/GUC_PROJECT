@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DBK Hostpitals</string>
+    <string name="doctor_signup">Doctor Sing Up</string>
+    <string name="patient_signup">Patient Sing Up</string>
+</resources>
