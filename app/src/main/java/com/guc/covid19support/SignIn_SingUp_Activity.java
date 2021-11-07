@@ -86,7 +86,7 @@ public class SignIn_SingUp_Activity extends AppCompatActivity {
                                 Intent intent = new Intent(SignIn_SingUp_Activity.this,ProfileMainActivity.class);
                                 startActivity(intent);
                             }else{
-                                Log.d("fuck", "onComplete: "+task.getException().getMessage().toString());
+                                Log.d("authentication", "onComplete: "+task.getException().getMessage().toString());
                                 Toast.makeText(SignIn_SingUp_Activity.this,task.getException().getMessage().toString(),Toast.LENGTH_LONG).show();
                             }
                         }
