@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/lightBlueA200"
-            app:navigationIcon="@drawable/backarrow2"
+
             app:title="@string/doctor_signup"
             app:titleTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
@@ -77,6 +77,14 @@
             android:indeterminateTintMode="src_atop"
             android:indeterminateTint="@color/lightBlueA200"
             android:visibility="invisible"
+            />
+        <TextView
+            android:layout_marginTop="23dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="43dp"
+            android:id="@+id/email_textview_Laytout"
+            android:textColor="@color/lightBlueA200"
             />
     </LinearLayout>
 

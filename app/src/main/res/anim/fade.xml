@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <!-- alpha = 0.0 transparent
+         alpha = 0.0 1.0
+         interporlator related to duration of showing the animation
+         -->
     <alpha
         android:fromAlpha="0.0"
         android:toAlpha="1.0"

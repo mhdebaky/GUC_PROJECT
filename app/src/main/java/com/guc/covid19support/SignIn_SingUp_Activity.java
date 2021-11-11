@@ -1,24 +1,17 @@
 package com.guc.covid19support;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
-import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.common.internal.SignInButtonImpl;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -42,7 +35,7 @@ public class SignIn_SingUp_Activity extends AppCompatActivity {
         setContentView(R.layout.signin_signup_activity);
         Animation anime = AnimationUtils.loadAnimation(this,R.anim.fade);
         anime.reset();
-        anime.setDuration(1600);
+        anime.setDuration(1900);
         TextView v2 = findViewById(R.id.sign_in_v2);
         v2.clearAnimation();
         v2.startAnimation(anime);
@@ -57,6 +50,7 @@ public class SignIn_SingUp_Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SignIn_SingUp_Activity.this,Patient_Or_Doctor_Activity.class);
                 startActivity(intent);
+
             }
         });
         signInButton.setOnClickListener(new View.OnClickListener() {
@@ -84,9 +78,10 @@ public class SignIn_SingUp_Activity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Toast.makeText(SignIn_SingUp_Activity.this,"Logged in Successfuly",Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(SignIn_SingUp_Activity.this,ProfileMainActivity.class);
+                                intent.putExtra("email",mUserEmail.getText().toString());
                                 startActivity(intent);
                             }else{
-                                Log.d("fuck", "onComplete: "+task.getException().getMessage().toString());
+                                Log.d("authentication", "onComplete: "+task.getException().getMessage().toString());
                                 Toast.makeText(SignIn_SingUp_Activity.this,task.getException().getMessage().toString(),Toast.LENGTH_LONG).show();
                             }
                         }

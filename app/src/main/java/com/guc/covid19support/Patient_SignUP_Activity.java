@@ -78,7 +78,9 @@ public class Patient_SignUP_Activity extends AppCompatActivity {
                                     Toast.makeText(Patient_SignUP_Activity.this, "Successfuly Registered", Toast.LENGTH_LONG).show();
                                     firebaseAuth.signInWithEmailAndPassword(email,pass);
                                     user = firebaseAuth.getCurrentUser();
-                                    firebasedb.child("Users").child("Patients").child(user.getUid()).child("email").setValue(user.getEmail());
+                                    firebasedb.child("Users").child(user.getUid()).child("email").setValue(user.getEmail());
+                                    firebasedb.child("Users").child(user.getUid()).child("isPatient").setValue(true);
+                                    firebasedb.child("Users").child(user.getUid()).child("isDoctor").setValue(false);
                                     Intent intent = new Intent(Patient_SignUP_Activity.this,ProfileMainActivity.class);
                                     startActivity(intent);
                                     Patient_SignUP_Activity.this.finish();

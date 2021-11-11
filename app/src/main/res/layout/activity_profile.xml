@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar_profile_activity"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent">
-        <com.google.android.material.appbar.MaterialToolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/appbar_profile_activity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profile_activity_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:title="profile "
-            app:titleTextColor="@color/white"
-            android:background="@color/lightblueA400"
-            app:navigationIcon="@drawable/backarrow2"/>
+            android:layout_height="match_parent"
+            android:background="@color/lightBlueA200"
+            app:navigationIcon="@drawable/backarrow2"
+            app:title="Profile"
+            app:titleTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout

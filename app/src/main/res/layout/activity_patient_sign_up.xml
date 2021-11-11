@@ -49,7 +49,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_patient_signUp_activity"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="50dp"
                 android:background="@color/lightBlue50"
                 android:hint="User Email"
                 android:inputType="textEmailAddress"
@@ -65,7 +65,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_patient_signUp_activity"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="50dp"
                 android:background="@color/lightBlue50"
                 android:hint="Password"
                 android:inputType="textPassword" />
@@ -80,7 +80,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Re_enter_Password_patient_signUp_activity"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="50dp"
                 android:background="@color/lightBlue50"
                 android:hint="Re-enter Password"
                 android:inputType="textPassword" />

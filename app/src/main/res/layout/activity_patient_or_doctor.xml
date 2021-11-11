@@ -36,7 +36,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <Button
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="200sp"
             android:id="@+id/SignUp_patient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             android:text="Sign Up Patient"
             />
         <Button
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="20sp"
             android:id="@+id/SignUp_Doctor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
