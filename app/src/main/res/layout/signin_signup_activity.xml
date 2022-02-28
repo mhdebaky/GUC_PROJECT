@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn_SingUp_Activity">
+    tools:context=".registeration.SignIn_SingUp_Activity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -20,17 +20,22 @@
             android:orientation="vertical">
 
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/sign_in_v1"
-                android:layout_width="wrap_content"
+                android:layout_width="345dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/iconlogo"
                 android:text="DBK Hospitals"
                 android:textColor="@color/bluelogo"
-                android:textSize="48dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="160sp"
+                app:autoSizeMinTextSize="20sp"
+                app:autoSizeStepGranularity="20dp"
+                app:autoSizeTextType="uniform" />
 
             <TextView
                 android:id="@+id/sign_in_v2"
@@ -71,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Login"
-                android:textColor="@color/bluelogo"
+                android:textColor="@color/lightblueA400"
                 android:textSize="32dp"
                 android:textStyle="bold"
                 />
@@ -89,7 +94,8 @@
                     android:background="@color/lightBlue50"
                     android:hint="Username"
                     android:inputType="textEmailAddress"
-                    android:textColorHint="@color/lightblueA400" />
+                    android:textColorHint="@color/lightblueA400"
+                    android:textColor="@color/lightblueA700"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -103,14 +109,17 @@
                     android:layout_height="wrap_content"
                     android:background="@color/lightBlue50"
                     android:hint="Password"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:textColor="@color/lightblueA700"
+                    android:textColorHint="@color/lightblueA400"
+                     />
             </com.google.android.material.textfield.TextInputLayout>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <com.google.android.gms.common.internal.SignInButtonImpl
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/singin_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -130,7 +139,7 @@
                     android:textColor="@color/lightblueA400"
                     android:textSize="18dp" />
 
-                <com.google.android.gms.common.internal.SignInButtonImpl
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/signup_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="23dp"
@@ -165,9 +174,9 @@
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView_signin"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.996" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

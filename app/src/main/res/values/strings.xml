@@ -2,4 +2,6 @@
     <string name="app_name">DBK Hostpitals</string>
     <string name="doctor_signup">Doctor Sing Up</string>
     <string name="patient_signup">Patient Sing Up</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

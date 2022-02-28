@@ -1,14 +1,13 @@
-package com.guc.covid19support;
+package com.guc.covid19support.registeration;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.material.appbar.AppBarLayout;
+import com.guc.covid19support.R;
 
 public class Patient_Or_Doctor_Activity extends AppCompatActivity {
 
@@ -24,14 +23,14 @@ public class Patient_Or_Doctor_Activity extends AppCompatActivity {
         doctorSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Patient_Or_Doctor_Activity.this,Doctor_SignUp_Activity.class);
+                Intent intent = new Intent(Patient_Or_Doctor_Activity.this, Doctor_SignUp_Activity.class);
                 startActivity(intent);
             }
         });
         patientSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Patient_Or_Doctor_Activity.this,Patient_SignUP_Activity.class);
+                Intent intent = new Intent(Patient_Or_Doctor_Activity.this, Patient_SignUP_Activity.class);
                 startActivity(intent);
             }
         });

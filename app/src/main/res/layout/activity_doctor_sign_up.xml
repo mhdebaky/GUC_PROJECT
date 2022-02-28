@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Patient_SignUP_Activity">
+    tools:context=".registeration.Patient_SignUP_Activity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/appbarlayout_patient_signup">
+        android:id="@+id/appbarlayout_doctor_signup">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_patient_signup"
+            android:id="@+id/toolbar_doctor_signup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/lightBlueA200"
@@ -28,28 +28,71 @@
         android:layout_marginTop="12dp"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_patient_signup"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_doctor_signup"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:text="Register"
+            android:layout_marginBottom="20dp"
+            android:text="Register As Doctor"
             android:textStyle="bold"
             android:textColor="@color/lightBlueA200"
-            android:textSize="34dp" />
+            android:textSize="20dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/doctor_email_doctorSignUpActiviy"
+                android:id="@+id/name_editText_profile_activity_doctor"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
+                android:background="@color/lightBlue50"
+                android:hint="Name"
+                android:inputType="textEmailAddress"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/age_editText_profile_activity_doctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lightBlue50"
+                android:hint="Age"
+                android:inputType="textEmailAddress"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_editText_profile_activity_doctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lightBlue50"
+                android:hint="Phone no."
+                android:inputType="textEmailAddress"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_doctor_signUp_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/lightBlue50"
                 android:hint="User Email"
                 android:inputType="textEmailAddress"
@@ -60,12 +103,12 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
+            android:layout_marginTop="15dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/doctor_password_doctorSignUpActiviy"
+                android:id="@+id/password_doctor_signUp_activity"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
                 android:background="@color/lightBlue50"
                 android:hint="Password"
                 android:inputType="textPassword" />
@@ -74,31 +117,33 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp">
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Re_enter_Password_doctor_doctorSignUpActiviy"
+                android:id="@+id/Re_enter_Password_doctor_signUp_activity"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
                 android:background="@color/lightBlue50"
                 android:hint="Re-enter Password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.gms.common.internal.SignInButtonImpl
-            android:id="@+id/signup_btn_doctorSignUpActiviy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signup_btn_doctor_signUp_activity"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/lightBlueA200"
             android:text="Sign Up"
             android:textColor="@color/white"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Rounded"
+            style="@style/Widget.MaterialComponents.Button.Icon"
             />
         <androidx.core.widget.ContentLoadingProgressBar
-            android:id="@+id/progressBar_Dortos_signup"
+            android:id="@+id/progressBar_doctor_signUp_activity"
             style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp"
             android:indeterminate="true"
             android:indeterminateTintMode="src_atop"
             android:indeterminateTint="@color/lightBlueA200"

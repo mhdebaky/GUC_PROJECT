@@ -3,17 +3,48 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.15260416666666668" />
+        <entry key="app/src/main/res/drawable/add_request.xml" value="0.2590733590733591" />
+        <entry key="app/src/main/res/drawable/add_sign.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/drawable/circle.xml" value="0.147265625" />
+        <entry key="app/src/main/res/drawable/edit_icon.xml" value="0.2590733590733591" />
+        <entry key="app/src/main/res/drawable/hospital_icon.xml" value="0.262109375" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.19583333333333333" />
+        <entry key="app/src/main/res/drawable/mail_icon.xml" value="0.2590733590733591" />
+        <entry key="app/src/main/res/drawable/phone_icon.xml" value="0.2590733590733591" />
+        <entry key="app/src/main/res/drawable/profile_icon.xml" value="0.262109375" />
+        <entry key="app/src/main/res/drawable/requests_icon.xml" value="0.262109375" />
+        <entry key="app/src/main/res/drawable/selector.xml" value="0.262109375" />
+        <entry key="app/src/main/res/layout/activity_doctor_profile_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_doctor_sign_up.xml" value="0.24931693989071038" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/activity_main_call.xml" value="0.14914529914529914" />
+        <entry key="app/src/main/res/layout/activity_make_call.xml" value="0.10960144927536232" />
+        <entry key="app/src/main/res/layout/activity_make_call_activiy.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_patient_or_doctor.xml" value="0.2462431693989071" />
         <entry key="app/src/main/res/layout/activity_patient_sign_up.xml" value="0.24931693989071038" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_profile_main.xml" value="0.1912568306010929" />
+        <entry key="app/src/main/res/layout/activity_profile_main_patient.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_recieve_call.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_start_up.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_add_request.xml" value="0.1564207650273224" />
+        <entry key="app/src/main/res/layout/fragment_doctor_hospitals.xml" value="0.13515625" />
+        <entry key="app/src/main/res/layout/fragment_doctor_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_hospitals.xml" value="0.1564207650273224" />
+        <entry key="app/src/main/res/layout/fragment_patients_requests.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1564207650273224" />
+        <entry key="app/src/main/res/layout/fragment_profile_patient.xml" value="0.226775956284153" />
+        <entry key="app/src/main/res/layout/fragment_show_request.xml" value="0.1564207650273224" />
+        <entry key="app/src/main/res/layout/item_request.xml" value="0.22" />
         <entry key="app/src/main/res/layout/login_activity.xml" value="0.17685589519650655" />
-        <entry key="app/src/main/res/layout/signin_signup_activity.xml" value="0.15744535519125682" />
+        <entry key="app/src/main/res/layout/reply_dialog.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/signin_signup_activity.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bottom_navigation_doctor.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bottom_navigation_patient.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/logout_exit_menu.xml" value="0.179296875" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.3333333333333333" />
       </map>
     </option>

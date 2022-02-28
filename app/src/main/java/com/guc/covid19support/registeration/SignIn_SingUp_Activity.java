@@ -1,4 +1,4 @@
-package com.guc.covid19support;
+package com.guc.covid19support.registeration;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,22 +12,33 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.common.internal.SignInButtonImpl;
+import androidx.appcompat.widget.AppCompatButton;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.guc.covid19support.profilemainactivity.DoctorProfileMainActivity;
+import com.guc.covid19support.R;
+import com.guc.covid19support.profilemainactivity.PatientProfileMainActivity;
 
 
 public class SignIn_SingUp_Activity extends AppCompatActivity {
 
     TextInputEditText mUserEmail;
     TextInputEditText mPassword;
-    SignInButtonImpl signInButton;
-    SignInButtonImpl singup_button;
+    AppCompatButton signInButton;
+    AppCompatButton singup_button;
     ProgressBar progressBar ;
     FirebaseAuth firebaseAuth;
+    Boolean isPatient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +46,7 @@ public class SignIn_SingUp_Activity extends AppCompatActivity {
         setContentView(R.layout.signin_signup_activity);
         Animation anime = AnimationUtils.loadAnimation(this,R.anim.fade);
         anime.reset();
-        anime.setDuration(1900);
+        anime.setDuration(2400);
         TextView v2 = findViewById(R.id.sign_in_v2);
         v2.clearAnimation();
         v2.startAnimation(anime);
@@ -48,7 +59,7 @@ public class SignIn_SingUp_Activity extends AppCompatActivity {
         singup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignIn_SingUp_Activity.this,Patient_Or_Doctor_Activity.class);
+                Intent intent = new Intent(SignIn_SingUp_Activity.this, Patient_Or_Doctor_Activity.class);
                 startActivity(intent);
 
             }
@@ -71,15 +82,13 @@ public class SignIn_SingUp_Activity extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                 }else{
                     firebaseAuth.signInWithEmailAndPassword(mUserEmail.getText().toString(),mPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
 
+                        @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             progressBar.setVisibility(View.GONE);
                             if(task.isSuccessful()){
-                                Toast.makeText(SignIn_SingUp_Activity.this,"Logged in Successfuly",Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(SignIn_SingUp_Activity.this,ProfileMainActivity.class);
-                                intent.putExtra("email",mUserEmail.getText().toString());
-                                startActivity(intent);
+                                toIntent();
+
                             }else{
                                 Log.d("authentication", "onComplete: "+task.getException().getMessage().toString());
                                 Toast.makeText(SignIn_SingUp_Activity.this,task.getException().getMessage().toString(),Toast.LENGTH_LONG).show();
@@ -94,6 +103,34 @@ public class SignIn_SingUp_Activity extends AppCompatActivity {
 
 
     }
+    public void toIntent(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid());
+        this.isPatient = false;
+        userRef.child("isPatient").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                isPatient = (Boolean) snapshot.getValue();
+                if(isPatient){
+                    Intent intent = new Intent(SignIn_SingUp_Activity.this, PatientProfileMainActivity.class);
+                    intent.putExtra("isPatient", true);
+                    intent.putExtra("isDoctor", false);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(SignIn_SingUp_Activity.this, DoctorProfileMainActivity.class);
+                    intent.putExtra("isPatient", false);
+                    intent.putExtra("isDoctor", true);
+                    startActivity(intent);
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
 
 }

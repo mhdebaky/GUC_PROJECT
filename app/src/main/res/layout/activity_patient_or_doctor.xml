@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Patient_Or_Doctor_Activity"
+    tools:context=".registeration.Patient_Or_Doctor_Activity"
     android:theme="@style/Widget.AppCompat.ActionBar">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -35,15 +35,16 @@
         app:layout_constraintTop_toBottomOf="@+id/choose_patient_doctor_layout"
         tools:layout_editor_absoluteX="0dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_marginTop="200sp"
             android:id="@+id/SignUp_patient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/lightBlueA200"
             android:text="Sign Up Patient"
+            android:textColor="@color/white"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_marginTop="20sp"
             android:id="@+id/SignUp_Doctor"
             android:layout_width="wrap_content"
@@ -51,6 +52,7 @@
             android:layout_marginBottom="284dp"
             android:backgroundTint="@color/lightBlueA200"
             android:text="Sign UP Doctor"
+            android:textColor="@color/white"
             />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import com.guc.covid19support.registeration.SignIn_SingUp_Activity;
+
 public class Start_Up_Activity extends AppCompatActivity {
 
     @Override
@@ -23,7 +25,7 @@ public class Start_Up_Activity extends AppCompatActivity {
         TextView tv1=  (TextView) findViewById(R.id.textView1);
         TextView tv2 = (TextView) findViewById(R.id.textView2);
         anim.reset();
-        anim.setDuration(2600);
+        anim.setDuration(3200);
         tv1.clearAnimation();
         tv1.startAnimation(anim);
         tv2.clearAnimation();

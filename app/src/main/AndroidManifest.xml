@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.guc.covid19support">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,27 +15,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19Support">
         <activity
+            android:name=".voip.udpcall.MainCallActivity"
+            android:exported="true" />
+        <activity
+            android:name=".voip.udpcall.MakeCallActivity"
+            android:exported="true" />
+        <activity
+            android:name=".voip.udpcall.RecieveCallActivity"
+            android:exported="true" />
+        <activity
             android:name=".MapsActivity"
             android:exported="true" />
         <activity
             android:name=".ProfileActivity"
             android:exported="true"
-            android:parentActivityName=".ProfileMainActivity" />
+            android:parentActivityName=".profilemainactivity.PatientProfileMainActivity" />
         <activity
-            android:name=".ProfileMainActivity"
+            android:name=".profilemainactivity.PatientProfileMainActivity"
             android:exported="true" />
         <activity
-            android:name=".Patient_Or_Doctor_Activity"
-            android:exported="true"
-            android:parentActivityName=".SignIn_SingUp_Activity" />
+            android:name=".profilemainactivity.DoctorProfileMainActivity"
+            android:exported="true" />
         <activity
-            android:name=".Patient_SignUP_Activity"
+            android:name=".registeration.Patient_Or_Doctor_Activity"
             android:exported="true"
-            android:parentActivityName=".Patient_Or_Doctor_Activity" />
+            android:parentActivityName=".registeration.SignIn_SingUp_Activity" />
         <activity
-            android:name=".Doctor_SignUp_Activity"
+            android:name=".registeration.Patient_SignUP_Activity"
             android:exported="true"
-            android:parentActivityName=".Patient_Or_Doctor_Activity" />
+            android:parentActivityName=".registeration.Patient_Or_Doctor_Activity" />
+        <activity
+            android:name=".registeration.Doctor_SignUp_Activity"
+            android:exported="true"
+            android:parentActivityName=".registeration.Patient_Or_Doctor_Activity" />
         <activity
             android:name=".Start_Up_Activity"
             android:exported="true">
@@ -44,8 +58,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignIn_SingUp_Activity"
+            android:name=".registeration.SignIn_SingUp_Activity"
             android:exported="true" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

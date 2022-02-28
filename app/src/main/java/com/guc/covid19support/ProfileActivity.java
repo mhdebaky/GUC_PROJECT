@@ -2,6 +2,7 @@ package com.guc.covid19support;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -25,7 +26,7 @@ import java.util.jar.Attributes;
 public class ProfileActivity extends AppCompatActivity {
     TextInputEditText mName;
     TextInputEditText mAge;
-    SignInButtonImpl updateBtn;
+    AppCompatButton updateBtn;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
     DatabaseReference firebasedb;
@@ -39,7 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
         updateBtn = findViewById(R.id.update_btn);
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
-        firebasedb = FirebaseDatabase.getInstance().getReference();
+        firebasedb = FirebaseDatabase.getInstance().getReference().child("Users");
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +52,7 @@ public class ProfileActivity extends AppCompatActivity {
                     mAge.requestFocus();
                 }else{
 
-                    firebasedb.child("Users").child(user.getUid()).child("Name").setValue(mName.getText().toString())
+                    firebasedb.child(user.getUid()).child("Name").setValue(mName.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -60,7 +61,7 @@ public class ProfileActivity extends AppCompatActivity {
                                     }
                                 }
                             });
-                    firebasedb.child("Users").child(user.getUid()).child("Age").setValue(Integer.parseInt(mAge.getText().toString()))
+                    firebasedb.child(user.getUid()).child("Age").setValue(Integer.parseInt(mAge.getText().toString()))
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -70,7 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 }
                             });
 
-                    firebasedb.child("Users").child(user.getUid()).child("Age").addValueEventListener(new ValueEventListener() {
+                    firebasedb.child(user.getUid()).child("Age").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if(snapshot.getValue() != null){
